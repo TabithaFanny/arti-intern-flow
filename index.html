@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f2ea" />
+  <meta name="description" content="在开始 ARTi 用户增长实习申请前，先完成一次产品体验。" />
+  <title>ARTi 实习申请 · 产品体验</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23171512'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Inter,Arial,sans-serif' font-size='28' fill='%23f6f2ea' font-weight='700'%3EARTi%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f2ea;
+      --bg-soft: #f1ebdf;
+      --card: rgba(255, 252, 247, 0.72);
+      --card-strong: rgba(255, 252, 247, 0.88);
+      --line: rgba(23, 21, 18, 0.10);
+      --line-strong: rgba(23, 21, 18, 0.16);
+      --text: #171512;
+      --muted: rgba(23, 21, 18, 0.68);
+      --muted-2: rgba(23, 21, 18, 0.52);
+      --accent: #171512;
+      --accent-soft: rgba(23, 21, 18, 0.08);
+      --shadow: 0 18px 48px rgba(23, 21, 18, 0.08);
+      --shadow-soft: 0 10px 24px rgba(23, 21, 18, 0.06);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(1200px 700px at 50% -20%, rgba(232, 200, 138, 0.20), transparent 56%),
+        linear-gradient(180deg, #f7f3eb 0%, #f4efe5 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 22px 0 38px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 4px 0 28px;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .wordmark span {
+      letter-spacing: 0.28em;
+      font-size: 15px;
+    }
+
+    .eyebrow {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 252, 247, 0.42);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero {
+      padding: 26px 0 14px;
+      max-width: 720px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      font-weight: 650;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .step {
+      padding: 22px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .step-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .step-index {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      flex: none;
+      background: var(--accent);
+      color: #f7f3eb;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 10px 18px rgba(23, 21, 18, 0.18);
+    }
+
+    .step h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .step .sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .copy-card {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.42);
+      border: 1px solid rgba(23, 21, 18, 0.08);
+    }
+
+    .copy-card h3 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      font-weight: 700;
+    }
+
+    .copy-card p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      font-size: 15px;
+      font-weight: 650;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+      will-change: transform;
+    }
+
+    .btn:focus-visible,
+    .upload-trigger:focus-visible,
+    input[type="file"]:focus-visible + .upload-trigger {
+      outline: 3px solid rgba(23, 21, 18, 0.18);
+      outline-offset: 2px;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--accent);
+      color: #f8f3e8;
+      box-shadow: 0 16px 28px rgba(23, 21, 18, 0.16);
+    }
+    .btn-ghost {
+      background: rgba(23, 21, 18, 0.04);
+      border-color: rgba(23, 21, 18, 0.08);
+      color: var(--text);
+    }
+
+    .hint {
+      margin: 12px 0 0;
+      font-size: 13px;
+      color: var(--muted-2);
+    }
+
+    .upload-shell {
+      margin-top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .upload-box {
+      position: relative;
+      border-radius: 24px;
+      border: 1px dashed rgba(23, 21, 18, 0.18);
+      background: rgba(255, 255, 255, 0.42);
+      padding: 18px;
+      overflow: hidden;
+    }
+
+    .upload-input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .upload-trigger {
+      min-height: 124px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.48), rgba(255,255,255,0.24));
+      color: var(--text);
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+      padding: 16px;
+    }
+
+    .upload-trigger strong {
+      display: block;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .upload-trigger span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .upload-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: rgba(23, 21, 18, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .selected-state {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(23, 21, 18, 0.06);
+      border: 1px solid rgba(23, 21, 18, 0.08);
+    }
+
+    .selected-state img {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      object-fit: cover;
+      background: rgba(255,255,255,0.48);
+      border: 1px solid rgba(23,21,18,0.08);
+      flex: none;
+    }
+
+    .selected-copy {
+      min-width: 0;
+    }
+
+    .selected-copy strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .selected-copy small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .upload-status {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .upload-status[data-state="error"] { color: #8c3d20; }
+    .upload-status[data-state="ready"] { color: #1d5f34; }
+
+    .gate {
+      margin-top: 18px;
+      padding: 0;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(23, 21, 18, 0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.70), rgba(255,255,255,0.54));
+      box-shadow: var(--shadow);
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity 320ms ease, transform 320ms ease, max-height 360ms ease;
+    }
+
+    .gate.is-open {
+      max-height: 1200px;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .gate-inner {
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(23, 21, 18, 0.06);
+      border: 1px solid rgba(23, 21, 18, 0.08);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 650;
+      width: fit-content;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      background: #1d5f34;
+      box-shadow: 0 0 0 4px rgba(29, 95, 52, 0.12);
+    }
+
+    .gate-title {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .gate-copy {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 52ch;
+    }
+
+    .app-grid {
+      display: grid;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .qr-panel,
+    .action-panel {
+      border-radius: 24px;
+      border: 1px solid rgba(23, 21, 18, 0.08);
+      background: rgba(255, 255, 255, 0.52);
+      padding: 18px;
+    }
+
+    .qr-panel h3,
+    .action-panel h3 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .qr-wrap {
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .qr-frame {
+      width: min(100%, 258px);
+      padding: 14px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid rgba(23, 21, 18, 0.10);
+      box-shadow: 0 8px 20px rgba(23, 21, 18, 0.08);
+    }
+
+    .qr-frame img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+    }
+
+    .qr-caption {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .action-panel p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted-2);
+      font-size: 12px;
+      letter-spacing: 0.01em;
+    }
+
+    .hidden-sr {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (min-width: 760px) {
+      .topbar { margin-bottom: 34px; }
+      .grid { gap: 22px; }
+      .step { padding: 26px; }
+      .gate-inner { padding: 28px; }
+      .app-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar" aria-label="ARTi internship header">
+      <div class="wordmark" aria-label="ARTi"><span>ARTi</span></div>
+      <div class="eyebrow">Internship Application</div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">先体验产品，再开始申请</h1>
+      <p>用户增长的工作，从理解真实用户体验开始。我们希望每一位增长实习候选人，都先亲自体验一次 ARTi，完成注册与新手流程，并提交一张体验截图，再继续进入正式申请。</p>
+    </section>
+
+    <section class="grid" aria-label="application steps">
+      <article class="step" aria-labelledby="step1-title">
+        <div class="step-head">
+          <div class="step-index" aria-hidden="true">1</div>
+          <div>
+            <h2 id="step1-title">认识并体验 ARTi</h2>
+            <p class="sub">请先完成产品注册，并实际走一遍新手流程。</p>
+          </div>
+        </div>
+
+        <div class="copy-card">
+          <h3>ARTi 是什么？</h3>
+          <p>ARTi 是一款 AI 智能投研平台，围绕市场分析、行业研究、资产配置与投资判断复盘展开。它通过多智能体协作与结构化分析，把不同视角和证据链组织在一起，帮助用户更系统地理解市场信息、形成自己的判断，并回看推理过程。ARTi 强调可追踪、可审计的分析方式，而不是单点预测。</p>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://www.artifin.ai/invite/REF-D2D1D54E" target="_blank" rel="noopener noreferrer">打开 ARTi 邀请链接 ↗</a>
+        </div>
+
+        <p class="hint">建议完成注册后继续体验新手引导，再返回本页进入下一步。</p>
+      </article>
+
+      <article class="step" aria-labelledby="step2-title">
+        <div class="step-head">
+          <div class="step-index" aria-hidden="true">2</div>
+          <div>
+            <h2 id="step2-title">提交产品体验截图</h2>
+            <p class="sub">完成体验后，上传一张产品使用截图或新手流程截图即可。</p>
+          </div>
+        </div>
+
+        <div class="upload-shell">
+          <div class="upload-box">
+            <input class="upload-input" id="screenshot" type="file" accept="image/*" aria-describedby="upload-help upload-status" />
+            <label class="upload-trigger" for="screenshot" id="upload-help">
+              <div class="upload-mark" aria-hidden="true">+</div>
+              <strong>选择体验截图</strong>
+              <span>从相册选择，或直接拍摄</span>
+            </label>
+          </div>
+
+          <div class="selected-state" id="selected-state" hidden>
+            <img id="preview" alt="已选择的体验截图预览" />
+            <div class="selected-copy">
+              <strong id="selected-title">已选择截图</strong>
+              <small id="selected-name"></small>
+            </div>
+          </div>
+
+          <p class="upload-status" id="upload-status" aria-live="polite">上传后将开放正式申请入口。</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="gate" id="application-gate" aria-hidden="true">
+      <div class="gate-inner">
+        <div class="status-pill"><span class="status-dot" aria-hidden="true"></span> 已完成产品体验</div>
+        <div>
+          <h2 class="gate-title">继续实习申请</h2>
+          <p class="gate-copy">感谢你先体验 ARTi。正式申请入口已为你开放。</p>
+        </div>
+
+        <div class="app-grid">
+          <div class="qr-panel">
+            <h3>正式申请二维码</h3>
+            <div class="qr-wrap">
+              <div class="qr-frame">
+                <img src="assets/application-qr.svg" alt="ARTi 实习申请二维码，链接指向 https://www.artifin.ai/join/social-media-intern" />
+              </div>
+              <p class="qr-caption">二维码内容：<br />https://www.artifin.ai/join/social-media-intern</p>
+            </div>
+          </div>
+
+          <div class="action-panel">
+            <h3>实习申请入口</h3>
+            <p>如果你正在用同一台手机，无需扫描二维码，直接点击下方按钮即可。</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://www.artifin.ai/join/social-media-intern" target="_blank" rel="noopener noreferrer">进入实习申请 →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-note">请在完成体验后再继续下一步。</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const fileInput = document.getElementById('screenshot');
+      const gate = document.getElementById('application-gate');
+      const status = document.getElementById('upload-status');
+      const selectedState = document.getElementById('selected-state');
+      const selectedName = document.getElementById('selected-name');
+      const preview = document.getElementById('preview');
+      const selectedTitle = document.getElementById('selected-title');
+      let currentUrl = '';
+      let opened = false;
+
+      function openGate() {
+        if (opened) return;
+        opened = true;
+        gate.classList.add('is-open');
+        gate.setAttribute('aria-hidden', 'false');
+        setTimeout(() => {
+          gate.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 260);
+      }
+
+      function setStatus(text, state) {
+        status.textContent = text;
+        status.dataset.state = state || '';
+      }
+
+      fileInput.addEventListener('change', () => {
+        const file = fileInput.files && fileInput.files[0];
+        if (!file) {
+          setStatus('上传后将开放正式申请入口。', '');
+          return;
+        }
+        if (!file.type || !file.type.startsWith('image/')) {
+          selectedState.hidden = true;
+          setStatus('请选择图片文件。', 'error');
+          fileInput.value = '';
+          return;
+        }
+
+        if (currentUrl) URL.revokeObjectURL(currentUrl);
+        currentUrl = URL.createObjectURL(file);
+        preview.src = currentUrl;
+        selectedName.textContent = file.name || '已选择截图';
+        selectedTitle.textContent = '体验步骤已确认，可以继续申请';
+        selectedState.hidden = false;
+        setStatus('体验步骤已确认，可以继续申请。', 'ready');
+        openGate();
+      });
+    })();
+  </script>
+</body>
+</html>
